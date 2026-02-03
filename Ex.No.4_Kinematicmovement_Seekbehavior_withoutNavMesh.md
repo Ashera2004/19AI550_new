@@ -26,63 +26,55 @@ To write a program to simulate the process of seek and Flee behavior in Unity wi
 ### Program:
 Seek Script
 ```csharp
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class seekScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Transform target;  // The object to seek
-    public float speed = 5f;  // Movement speed
-    void Start()
-    {
-        
-    }
+    public Transform target;      // Object to seek
+    public float speed = 5f;      // Movement speed
+    public float stopDistance = 1.5f; // Distance at which movement stops
 
-    // Update is called once per frame
     void Update()
     {
-        if (target == null) return;  // Exit if no target is assigned
+        if (target == null) return;
 
-        // Calculate the desired direction
+        float distance = Vector3.Distance(transform.position, target.position);
+
+        // Stop moving if within stop distance
+        if (distance <= stopDistance) return;
+
         Vector3 direction = (target.position - transform.position).normalized;
-
-        // Move the object towards the target
         transform.position += direction * speed * Time.deltaTime;
     }
 }
+
 ```
 
 Flee Script
 
 ```csharp
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class fleeScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Transform target;  // The object to seek
-    public float speed = 5f;  // Movement speed
-    void Start()
-    {
-        
-    }
+    public Transform target;      // Object to flee from
+    public float speed = 5f;      // Movement speed
+    public float safeDistance = 6f; // Distance at which movement stops
 
-    // Update is called once per frame
     void Update()
     {
-        if (target == null) return;  // Exit if no target is assigned
+        if (target == null) return;
 
-        // Calculate the desired direction
-        Vector3 direction = (transform.position-target.position).normalized;
+        float distance = Vector3.Distance(transform.position, target.position);
 
-        // Move the object towards the target
+        // Stop moving if already far enough
+        if (distance >= safeDistance) return;
+
+        Vector3 direction = (transform.position - target.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
 }
+
 ```
 ### Output:
 
