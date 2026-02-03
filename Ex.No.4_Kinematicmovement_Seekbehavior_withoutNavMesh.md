@@ -24,7 +24,8 @@ To write a program to simulate the process of seek and Flee behavior in Unity wi
 14. Stop the program
     
 ### Program:
-```
+Seek Script
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,7 +53,10 @@ public class seekScript : MonoBehaviour
     }
 }
 ```
-```
+
+Flee Script
+
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
