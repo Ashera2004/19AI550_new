@@ -1,35 +1,35 @@
 # Ex.No: 5  Implementation of Steering behaviour-Pursue and Evade in Unity
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 9/2/2026                                                                    
+### REGISTER NUMBER : 212224040316
 ### AIM: 
 To write a program to simulate the process of Pursue and Evade behavior in Unity using NavigationMeshAgent. 
 ### Algorithm:
-```
-1. Create a New Unity Project by Open the  Unity Hub and create a new 3D Project.
-2. Name the project "SteeringBehaviors" and select a location. Click Create.
-3.Open Unity Scene (default is SampleScene).
+
+1. Create a New Unity Project by Open the  Unity Hub and create a new 3D Project.                                                                                                                                                  
+2. Name the project "SteeringBehaviors" and select a location. Click Create.                                                                                                                                                                                        
+3.Open Unity Scene (default is SampleScene).                                                                                                                                                                                                
   In the Hierarchy, create a Plane:
   Right-click → 3D Object → Plane (this will be the ground).
   Set its Scale to (10, 1, 10) for a larger surface.
   Create three Capsule for the Player, Pursuer, and Evader:
   Rename them to "Player", "Pursuer", and "Evader".
   Set their Y Position to 0.5 (so they sit on the ground).
-  Change their Material for better distinction (optional).
-3. Check AI navigation in window.
- Window → AI → Navigation (opens the Navigation tab).  If it is not available then add package by name "com.unity.ai.navigation"
-4. Select the Plane, go to the Navigation tab, and mark it as Navigation Static.
+  Change their Material for better distinction (optional).                                                                                                                                                                            
+3. Check AI navigation in window.                                                                                                                                                                                                                
+ Window → AI → Navigation (opens the Navigation tab).  If it is not available then add package by name "com.unity.ai.navigation"                                                                                                          
+4. Select the Plane, go to the Navigation tab, and mark it as Navigation Static.                                                                                                                                                        
    Go to the Bake tab and click Bake.
    or
-   Add navMeshSurface to plane and bake 
-4. Add NavMeshAgent Component 
+   Add navMeshSurface to plane and bake                                                                                                                                                                                                 
+4. Add NavMeshAgent Component                                                                                                                                                                                                           
     Select Pursuer, and Evader.
     Click Add Component → Search for NavMeshAgent and add it.
     Adjust NavMeshAgent Settings:
     Player: Set Speed = 5.
     Pursuer: Set Speed = 4.
-    Evader: Set Speed = 6.
-5. Write a script for  Player_movement behavior and save it
-
+    Evader: Set Speed = 6.                                                                                                                                                                                                                    
+5. Write a script for  Player_movement behavior and save it                                                                                                                                                                          
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -100,20 +100,16 @@ public class Pursuer: MonoBehaviour
         pursue();          
      }
 }
+
+    
+```
 7. Attach the Script to each player,pursuer and Evader.
    Drag & Drop the Target from the Hierarchy into the "Target" field in the script component ( For pursuer and Evader).
 12. Run the game 
 13. Stop the program
-    
-```
 ### Output:
 
-
-
-
-
-
-
+<img width="1918" height="1198" alt="Screenshot 2026-02-09 094953" src="https://github.com/user-attachments/assets/21e81ea0-90f0-4b42-a666-1dae9462de13" />
 
 
 ### Result:
